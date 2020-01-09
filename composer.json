@@ -1,0 +1,17 @@
+{
+  "name": "clsasc/sdif-parser",
+  "description": "A class based Standard Data Interchange Format parser for swimming data files.",
+  "license": "Apache-2.0",
+  "homepage": "https://github.com/Chester-le-Street-ASC/SDIFParser",
+  "require": {
+    "php": ">=7.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "CLSASC\\SDIFParser\\": "src/CLSASC/SDIFParser/"
+    }
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^8"
+  }
+}
