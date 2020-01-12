@@ -8,7 +8,10 @@
   },
   "autoload": {
     "psr-4": {
-      "CLSASC\\SDIFParser\\": "src/CLSASC/SDIFParser/"
+      "CLSASC\\SDIFParser\\": "src/CLSASC/SDIFParser/",
+      "CLSASC\\SDIF\\": "src/CLSASC/SDIF/",
+      "CLSASC\\SDIF\\Code\\": "src/CLSASC/SDIF/code/",
+      "CLSASC\\SDIF\\Code\\Exceptions\\": "src/CLSASC/SDIF/code/exceptions"
     }
   },
   "require-dev": {
