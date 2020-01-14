@@ -147,7 +147,7 @@ class D0 extends SDIFRecord {
   }
 
   /**
-   * Undocumented function
+   * Get date of swim
    *
    * @return DateTime date of swim
    */
@@ -162,6 +162,129 @@ class D0 extends SDIFRecord {
    */
   public function getDateOfSwimDB() {
     return ($this->dateOfSwim->format("Y-m-d"));
+  }
+
+  /**
+   * Get the time as an integer format, which is more useful for sorting
+   *
+   * @param string $time
+   * @return int time as an integer in hundredths of seconds
+   */
+  public static function timeAsInt(string $time) {
+    $time = \str_pad($time, 8, ' ', \STR_PAD_LEFT);
+    $hunds = (int) trim(substr($record, 6, 2));
+    $secs = (int) trim(substr($record, 3, 2));
+    $mins = (int) trim(substr($record, 0, 2));
+
+    return $hunds + ($secs * 100) + ($mins * 60 * 100);
+  }
+
+  /**
+   * Determine if there is a prelim time
+   *
+   * @return boolean
+   */
+  public function hasPrelimTime() {
+    if (\mb_strlen($this->prelimTime) > 0) {
+      return true;
+    }
+    return false;
+  }
+
+  /**
+   * Get the prelim time
+   *
+   * @return string time
+   */
+  public function getPrelim() {
+    return $this->prelimTime;
+  }
+
+  /**
+   * Get the swim course type
+   *
+   * @return string course type
+   */
+  public function getPrelimCourse() {
+    return $this->prelimCourse;
+  }
+
+  /**
+   * Determine if there is a swim-off time
+   *
+   * @return boolean
+   */
+  public function hasSwimOffTime() {
+    if (\mb_strlen($this->swimOffTime) > 0) {
+      return true;
+    }
+    return false;
+  }
+
+  /**
+   * Get the swim-off time
+   *
+   * @return string time
+   */
+  public function getSwimOff() {
+    return $this->swimOffTime;
+  }
+
+  /**
+   * Get the swim course type
+   *
+   * @return string course type
+   */
+  public function getSwimOffCourse() {
+    return $this->swimOffCourse;
+  }
+
+  /**
+   * Determine if there is a finals time
+   *
+   * @return boolean
+   */
+  public function hasFinalsTime() {
+    if (\mb_strlen($this->finalsTime) > 0) {
+      return true;
+    }
+    return false;
+  }
+
+  /**
+   * Get the finals time
+   *
+   * @return string time
+   */
+  public function getFinals() {
+    return $this->finalsTime;
+  }
+
+  /**
+   * Get the swim course type
+   *
+   * @return string course type
+   */
+  public function getFinalsCourse() {
+    return $this->finalsCourse;
+  }
+
+  /**
+   * Get the stroke
+   *
+   * @return string stroke code
+   */
+  public function getStroke() {
+    return $this->stroke;
+  }
+
+  /**
+   * Get the event distance
+   *
+   * @return int distance
+   */
+  public function getDistance() {
+    return $this->eventDistance;
   }
 
 }
