@@ -77,14 +77,14 @@ class D0 extends SDIFRecord {
     $this->swimmerNumber = trim(substr($record, 39, 12));
     $this->attach = substr($record, 51, 1);
     $this->citizen = substr($record, 52, 3);
-    $this->dateOfBirth = DateTime::createFromFormat('mdY', substr($record, 55, 8));
+    $this->dateOfBirth = \DateTime::createFromFormat('mdY', substr($record, 55, 8));
     $this->ageClass = substr($record, 63, 2);
     $this->sex = substr($record, 65, 1);
     $this->eventSex = substr($record, 66, 1);
     $this->eventDistance = (int) trim(substr($record, 67, 4));
     $this->stroke = substr($record, 71, 1);
     $this->eventAge = substr($record, 76, 4);
-    $this->dateOfSwim = DateTime::createFromFormat('mdY', substr($record, 80, 8));
+    $this->dateOfSwim = \DateTime::createFromFormat('mdY', substr($record, 80, 8));
 
     // Time stuff
     $this->seedTime = trim(substr($record, 88, 8));
