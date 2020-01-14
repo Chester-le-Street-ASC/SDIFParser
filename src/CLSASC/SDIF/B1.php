@@ -67,6 +67,7 @@ class B1 extends SDIFRecord {
       $this->meetEnd = new \DateTime('1970-01-01', new DateTimeZone('Europe/London'));
     }
     $this->altitude = (int) trim(substr($record, 138, 4));
+    $this->course = trim(substr($record, 149, 1));
   }
 
   /**
@@ -130,6 +131,10 @@ class B1 extends SDIFRecord {
    */
   public function getMeetEndDateDB() {
     return ($this->meetEnd->format("Y-m-d"));
+  }
+
+  public function getCourse() {
+    return $this->course;
   }
 
 }
