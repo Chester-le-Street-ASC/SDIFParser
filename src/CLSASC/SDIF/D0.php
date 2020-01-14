@@ -172,9 +172,9 @@ class D0 extends SDIFRecord {
    */
   public static function timeAsInt(string $time) {
     $time = \str_pad($time, 8, ' ', \STR_PAD_LEFT);
-    $hunds = (int) trim(substr($record, 6, 2));
-    $secs = (int) trim(substr($record, 3, 2));
-    $mins = (int) trim(substr($record, 0, 2));
+    $hunds = (int) trim(substr($time, 6, 2));
+    $secs = (int) trim(substr($time, 3, 2));
+    $mins = (int) trim(substr($time, 0, 2));
 
     return $hunds + ($secs * 100) + ($mins * 60 * 100);
   }
