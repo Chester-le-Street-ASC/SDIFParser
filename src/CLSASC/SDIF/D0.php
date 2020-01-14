@@ -92,18 +92,18 @@ class D0 extends SDIFRecord {
 
     $this->prelimTime = trim(substr($record, 97, 8));
     $this->prelimCourse = trim(substr($record, 105, 1));
-    $this->prelimHeat = trim(substr($record, 124, 2));
-    $this->prelimLane = trim(substr($record, 126, 2));
-    $this->prelimPlaceRank = trim(substr($record, 132, 3));
+    $this->prelimHeat = (int) trim(substr($record, 124, 2));
+    $this->prelimLane = (int) trim(substr($record, 126, 2));
+    $this->prelimPlaceRank = (int) trim(substr($record, 132, 3));
 
     $this->swimOffTime = trim(substr($record, 106, 8));
     $this->swimOffCourse = trim(substr($record, 114, 1));
 
     $this->finalsTime = trim(substr($record, 115, 8));
     $this->finalsCourse = trim(substr($record, 123, 1));
-    $this->prelimHeat = trim(substr($record, 128, 2));
-    $this->prelimLane = trim(substr($record, 130, 2));
-    $this->prelimPlaceRank = trim(substr($record, 135, 3));
+    $this->prelimHeat = (int) trim(substr($record, 128, 2));
+    $this->prelimLane = (int) trim(substr($record, 130, 2));
+    $this->prelimPlaceRank = (int) trim(substr($record, 135, 3));
 
     // Other details
     $this->eventTimeClass = trim(substr($record, 142, 2));
