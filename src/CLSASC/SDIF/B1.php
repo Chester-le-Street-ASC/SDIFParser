@@ -110,7 +110,7 @@ class B1 extends SDIFRecord {
    *
    * @return string start date
    */
-  public function meetStartDB() {
+  public function getMeetStartDateDB() {
     return ($this->meetStart->format("Y-m-d"));
   }
 
@@ -128,7 +128,7 @@ class B1 extends SDIFRecord {
    *
    * @return string end date
    */
-  public function meetEndDB() {
+  public function getMeetEndDateDB() {
     return ($this->meetEnd->format("Y-m-d"));
   }
 
